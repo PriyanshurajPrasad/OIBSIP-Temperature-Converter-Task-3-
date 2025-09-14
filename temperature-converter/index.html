@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="description" content="A beautiful and responsive temperature converter that works across all devices">
+    <title>Temperature Converter</title>
+    <!-- Preload Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <header>
+            <h1>Temperature Converter</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+        
+        <main>
+            <div class="converter-container">
+                <div class="input-group">
+                    <input 
+                        type="number" 
+                        id="temperature-input" 
+                        placeholder="Enter temperature"
+                        step="0.01"
+                        autofocus
+                    >
+                    <select id="unit-select">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+                
+                <div class="result-container" id="result-container">
+                    <div class="result-placeholder">
+                        <p>Your converted temperatures will appear here</p>
+                    </div>
+                    <div class="conversion-results" id="conversion-results">
+                        <!-- Results will be dynamically inserted here -->
+                    </div>
+                    <button id="copy-results" class="copy-button" title="Copy results to clipboard" style="display: none;">
+                        <i class="far fa-copy"></i> Copy Results
+                    </button>
+                </div>
+                
+                <div class="formula-tooltip">
+                    <button class="formula-button" aria-label="Show conversion formulas">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <div class="formula-content">
+                        <h4>Conversion Formulas</h4>
+                        <ul>
+                            <li>°C to °F: (°C × 9/5) + 32</li>
+                            <li>°F to °C: (°F − 32) × 5/9</li>
+                            <li>°C to K: °C + 273.15</li>
+                            <li>K to °C: K − 273.15</li>
+                            <li>°F to K: (°F − 32) × 5/9 + 273.15</li>
+                            <li>K to °F: (K − 273.15) × 9/5 + 32</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="history-section">
+                    <div class="history-header">
+                        <h3>Conversion History</h3>
+                        <button id="clear-history" class="clear-history-btn" title="Clear all history">
+                            <i class="fas fa-trash-alt"></i> Clear All
+                        </button>
+                    </div>
+                    <div class="history-container" id="history-container">
+                        <!-- History items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2024 Temperature Converter | Made with Priyanshuraj</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js" type="module"></script>
+</body>
+</html>
